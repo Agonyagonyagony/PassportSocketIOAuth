@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "server": "yarn workspace server dev",
+    "client": "yarn workspace client dev",
+    "dev": "concurrently --kill-others-on-fail -c 'bgGreen.black,bgBlue.black' \"yarn:server\" \"yarn:client\"",
+    "fix:cs": "yarn workspaces foreach -p run fix:cs",
+    "lint:cs": "yarn workspaces foreach -p run lint:cs"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "typescript": "^4.5.5"
+  }
+}
